@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface>
+  <object class="tk.Frame" id="Frame_1">
+    <property name="cursor">bottom_tee</property>
+    <property name="height">200</property>
+    <property name="width">300</property>
+    <layout>
+      <property name="column">0</property>
+      <property name="propagate">True</property>
+      <property name="row">0</property>
+      <property name="sticky">nw</property>
+    </layout>
+    <child>
+      <object class="ttk.Labelframe" id="lfKeygen">
+        <property name="height">200</property>
+        <property name="text" translatable="yes">Key Configuration</property>
+        <property name="width">200</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+          <property name="sticky">nw</property>
+        </layout>
+        <child>
+          <object class="ttk.Frame" id="Frame_2">
+            <property name="width">200</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+            <child>
+              <object class="tk.Message" id="Message_1">
+                <property name="justify">right</property>
+                <property name="text" translatable="yes">Key size:</property>
+                <property name="width">80</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Spinbox" id="spnKeysize">
+                <property name="increment">256</property>
+                <property name="values">768</property>
+                <property name="width">5</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Button" id="btnKeygen">
+                <property name="command">keygen</property>
+                <property name="text" translatable="yes">Generate</property>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Button" id="btnLoadKey">
+                <property name="command">loadkey</property>
+                <property name="text" translatable="yes">Load Key</property>
+                <layout>
+                  <property name="column">3</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Button" id="btnDumpKey">
+                <property name="command">savekey</property>
+                <property name="text" translatable="yes">Save Key</property>
+                <layout>
+                  <property name="column">4</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Text" id="txtKeystatus">
+            <property name="height">21</property>
+            <property name="text" translatable="yes">-- Key not loaded --</property>
+            <property name="width">60</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Labelframe" id="lfMain">
+        <property name="height">200</property>
+        <property name="text" translatable="yes">Encryption / Decryption</property>
+        <property name="width">200</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">1</property>
+          <property name="sticky">nw</property>
+        </layout>
+        <child>
+          <object class="ttk.Frame" id="Frame_4">
+            <property name="height">200</property>
+            <property name="width">200</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">2</property>
+            </layout>
+            <child>
+              <object class="ttk.Button" id="btnEncryptHex">
+                <property name="command">enchex</property>
+                <property name="text" translatable="yes">Encrypt from Hex</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Button" id="btnEncryptText">
+                <property name="command">enctxt</property>
+                <property name="text" translatable="yes">Encrypt from Text</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Frame" id="Frame_5">
+            <property name="height">200</property>
+            <property name="width">200</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">3</property>
+            </layout>
+            <child>
+              <object class="ttk.Button" id="btnDecryptHex">
+                <property name="command">dechex</property>
+                <property name="text" translatable="yes">Decrypt to Hex</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">1</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Button" id="btnDecryptText">
+                <property name="command">dectxt</property>
+                <property name="text" translatable="yes">Decrypto to Text</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="propagate">True</property>
+                  <property name="row">1</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Text" id="txtData">
+            <property name="height">15</property>
+            <property name="text" translatable="yes">Data to encrypt</property>
+            <property name="width">60</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">4</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
