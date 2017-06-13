@@ -19,7 +19,9 @@ class RSAKey(object):
     @staticmethod
     def from_json(json_str):
         def as_int(x):
-            if x.startswith('0x'):
+            if type(x) in IntTypes:
+                return x
+            elif type(x) is str and x.startswith('0x'):
                 return int(x, 16)
             else:
                 return int(x, 10)
@@ -54,6 +56,9 @@ class RSAKey(object):
             self.d = modinv(self.e, self.phi)
         else:
             self.phi = self.d = None
+
+        if self.phi:
+            assert self.e < self.phi
 
         if dp and dq:
             self.dp = dp
@@ -174,7 +179,7 @@ class RSA(object):
         """
         if not self.key._can_encrypt:
             raise AttributeError('This key object can not do encryption')
-        if type(msg) is not int:
+        if type(msg) not in IntTypes:
             msg = bytes2int(ensure_bytes(msg))
 
         return pow(msg, self.key.e, self.key.N)
@@ -185,7 +190,7 @@ class RSA(object):
         """
         if not self.key._can_decrypt:
             raise AttributeError('This key object can not do decryption')
-        if type(msg) is not int:
+        if type(msg) not in IntTypes:
             msg = bytes2int(ensure_bytes(msg))
 
         if self.key._can_crt:

@@ -20,7 +20,7 @@ try: # python 2/3 compatability
     def int2bytes(b, sz):
         return ('%x' % b).zfill(sz * 2).decode('hex')[::-1]
     if sys.version_info.minor < 7:
-        print('python3.5+ or python2.7+ required')
+        print('python3.3+ or python2.7+ required')
         exit()
 except:
     pyversion = 3
@@ -29,8 +29,8 @@ except:
         return int.from_bytes(ensure_bytes(b), 'little')
     def int2bytes(b, sz):
         return b.to_bytes(sz, 'little')
-    if sys.version_info.minor < 5:
-        print('python3.5+ or python2.7+ required')
+    if sys.version_info.minor < 3:
+        print('python3.3+ or python2.7+ required')
         exit()
 
 assert sys.version_info.major == pyversion
