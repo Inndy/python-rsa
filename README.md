@@ -37,7 +37,7 @@ ref: [https://crypto.stackexchange.com/questions/3608/why-is-padding-used-for-rs
 
 `python main.py` / `python gui.py`
 
-## Screnshot
+## Screenshot
 
 ![screenshot](screenshot.png)
 
